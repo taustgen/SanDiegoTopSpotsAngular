@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>San Diego Top Spots</title>
+  </head>
+  <body ng-app="app">
+    <div ng-controller="HomeController as homeCtrl">
+    <table id="tab">
+      <tr id ="header">
+        <th>Name</th>
+        <th>Description</th>
+        <th>Link</th>
+      </tr>
+
+      <tr ng-repeat="spot in homeCtrl.in">
+        <td>{{spot.name}}</td>
+        <td>{{spot.description}}</td>
+        <td><a href="https://www.google.com/maps?q={{spot.location[0]+','+spot.location[1]}}">Open in Google Maps</a></td>
+      </tr>
+    </table>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script type="text/javascript"  src="scripts/app.js" ></script>
+    <script type="text/javascript"  src="scripts/HomeController.js" ></script>
+
+  </body>
+</html>
